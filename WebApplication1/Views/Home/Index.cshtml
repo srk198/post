@@ -1,0 +1,37 @@
+﻿@model IEnumerable<WebApplication1.Models.ClaimData>
+
+<h2>Claim Data</h2>
+
+<form asp-action="GetClaimData" method="post">
+    <label for="claimID">Enter Claim ID:</label>
+    <input type="text" id="claimID" name="claimID" />
+    <input type="submit" value="Get Claim Data" />
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>ClaimID</th>
+            <th>ClaimantName</th>
+            <th>ClaimDate</th>
+            <th>ClaimStatus</th>
+            <th>ClaimAmount</th>
+            <th>LastModifiedBy</th>
+            <th>LastModifiedDate</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ClaimID</td>
+                <td>@item.ClaimantName</td>
+                <td>@item.ClaimDate.ToShortDateString()</td>
+                <td>@item.ClaimStatus</td>
+                <td>@item.ClaimAmount</td>
+                <td>@item.LastModifiedBy</td>
+                <td>@item.LastModifiedDate.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
