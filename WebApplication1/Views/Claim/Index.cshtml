@@ -1,0 +1,53 @@
+﻿@model List<WebApplication1.Models.ClaimData>
+
+<!-- Form to submit a specific claim ID -->
+<form method="post" action="/Claim/GetClaimData">
+    <input name="claimID" value="1234" />
+    <button type="submit">Submit</button>
+</form>
+
+<!-- Form to get all claims -->
+<form method="post" action="/Claim/GetClaimData" style="margin-top: 10px;">
+    <button type="submit" name="claimID" value="">Get All Claims</button>
+</form>
+
+@if (Model == null)
+{
+    <p>Model is null.</p>
+}
+else if (!Model.Any())
+{
+    <p>Model is not null but is empty.</p>
+}
+else
+{
+    <p>Model has @Model.Count claims.</p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Claim ID</th>
+                <th>Claimant Name</th>
+                <th>Claim Date</th>
+                <th>Claim Status</th>
+                <th>Claim Amount</th>
+                <th>Last Modified By</th>
+                <th>Last Modified Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var claim in Model)
+            {
+                <tr>
+                    <td>@claim.ClaimID</td>
+                    <td>@claim.ClaimantName</td>
+                    <td>@claim.ClaimDate.ToString("MM/dd/yyyy")</td>
+                    <td>@claim.ClaimStatus</td>
+                    <td>@claim.ClaimAmount.ToString("C")</td>
+                    <td>@claim.LastModifiedBy</td>
+                    <td>@claim.LastModifiedDate.ToString("MM/dd/yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

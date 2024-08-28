@@ -64,3 +64,4 @@ C:\Users\srikanthpa.DATAMARSHALL\source\repos\WebApplication1\WebApplication1\ob
 C:\Users\srikanthpa.DATAMARSHALL\source\repos\WebApplication1\WebApplication1\obj\Debug\net8.0\WebApplication1.pdb
 C:\Users\srikanthpa.DATAMARSHALL\source\repos\WebApplication1\WebApplication1\obj\Debug\net8.0\WebApplication1.genruntimeconfig.cache
 C:\Users\srikanthpa.DATAMARSHALL\source\repos\WebApplication1\WebApplication1\obj\Debug\net8.0\ref\WebApplication1.dll
+C:\Users\srikanthpa.DATAMARSHALL\source\repos\WebApplication1\WebApplication1\obj\Debug\net8.0\WebApplication1.sourcelink.json
